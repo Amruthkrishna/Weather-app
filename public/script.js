@@ -7,7 +7,7 @@ function getWeather() {
     }
 
     // Call your backend instead of OpenWeatherMap directly
-    fetch(`http://localhost:3000/weather?city=${city}`)
+    fetch(`/weather?city=${city}`)
         .then(response => response.json())
         .then(data => {
             displayWeather(data);
@@ -17,7 +17,8 @@ function getWeather() {
             alert('Error fetching current weather data. Please try again.');
         });
 
-    fetch(`http://localhost:3000/forecast?city=${city}`)
+    fetch(`/forecast?city=${city}`)
+
         .then(response => response.json())
         .then(data => {
             displayHourlyForecast(data.list);
