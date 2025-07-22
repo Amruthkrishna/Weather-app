@@ -7,7 +7,7 @@ function getWeather() {
     }
 
     // Call your backend instead of OpenWeatherMap directly
-    fetch(`/weather?city=${city}`)
+    fetch(`https://weather-backend-to59.onrender.com/weather?city=${city}`)
         .then(response => response.json())
         .then(data => {
             displayWeather(data);
@@ -17,7 +17,7 @@ function getWeather() {
             alert('Error fetching current weather data. Please try again.');
         });
 
-    fetch(`/forecast?city=${city}`)
+    fetch(`https://weather-backend-to59.onrender.com/forecast?city=${city}`)
 
         .then(response => response.json())
         .then(data => {
